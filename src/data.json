@@ -1,0 +1,33 @@
+{
+  "Escaladores": [
+    {
+      "id": 1,
+      "Nombre": "Adam Ondra",
+      "Genero": "Masculino",
+      "lugar": "Republica checa",
+      "Campeon del mundo": true
+    },
+
+    {
+      "id": 2,
+      "Nombre": "Janja Garnbret",
+      "Genero": "Femenino",
+      "lugar": "eslovenia",
+      "campeon del mundo:": false
+    },
+    {
+      "id": 3,
+      "Nombre": "Narasaki",
+      "Genero": "Masculino",
+      "lugar": "Japón",
+      "campeon del mundo:": true
+    },
+    {
+      "id": 4,
+      "Nombre": "Alberto Ginés",
+      "Genero": "Masculino",
+      "lugar": "España",
+      "campeon del mundo:": false
+    }
+  ]
+}
