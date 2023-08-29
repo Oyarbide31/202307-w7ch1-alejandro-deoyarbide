@@ -1,11 +1,11 @@
-import cors from "cors";
-import createDebug from "debug";
-import express from "express";
-import morgan from "morgan";
-import escaladoresRouter from "./routers/escaladores";
+import cors from 'cors';
+import createDebug from 'debug';
+import express from 'express';
+import morgan from 'morgan';
+import { escaladoresRouter } from './routers/escaladores.router.js';
 export const app = express();
 const debug = createDebug('W6E:App');
-debug('Started'); // guardo mensajes de depuración
+debug('Started'); // Guardo mensajes de depuración
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());

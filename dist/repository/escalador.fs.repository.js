@@ -1,6 +1,7 @@
+/* eslint-disable lines-between-class-members */
 import { readFile, writeFile } from 'fs/promises';
 import { HttpError } from '../model/http.error.js';
-export class repository {
+export class EscaladorRepo {
     file;
     constructor() {
         this.file = 'data.json';
@@ -12,8 +13,9 @@ export class repository {
     async getAll() {
         const data = JSON.parse(await readFile(this.file, { encoding: 'utf-8' }));
         return data;
+        /* La funcion de get all es que lo que le devuelve readFile */
     }
-    async getbyid(id) {
+    async getById(id) {
         const data = await this.getAll();
         const item = data.find((item) => item.id === id);
         if (!item)

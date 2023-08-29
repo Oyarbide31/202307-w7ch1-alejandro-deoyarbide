@@ -1,7 +1,9 @@
+import { Router as createRouter } from 'express';
+import { escaladorController } from '../controller/escalador.controller';
 const debug = createDebug('W6E:Router:EscaladoresRouter');
 debug('Loaded');
 const repo = new EscaladoresFsRepository(); //aki tienes 1 archivo
-const escaladorController = new escaladorController(repo); //Aki tienes otro archivo
+const controller = new escaladorController(repo); //Aki tienes otro archivo
 export const taskRouter = createRouter();
 escaladoresRouter.get('/escaladores', escaladorController.getAll.bind(escaladorController));
 escaladoresRouter.get('/escaladores/:id', escaladorController.getById.bind(escaladorController));

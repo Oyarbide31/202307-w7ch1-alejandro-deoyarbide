@@ -1,9 +1,10 @@
+/* eslint-disable lines-between-class-members */
 import { readFile, writeFile } from 'fs/promises';
 import { escalador, escaladorNoID } from '../model/escalador';
 import { HttpError } from '../model/http.error.js';
 import { Repository } from './repository';
 
-export class repository implements Repository<escalador> {
+export class EscaladorRepo implements Repository<escalador> {
   private file: string;
   constructor() {
     this.file = 'data.json';
@@ -19,9 +20,9 @@ export class repository implements Repository<escalador> {
       await readFile(this.file, { encoding: 'utf-8' })
     );
     return data;
+    /* La funcion de get all es que lo que le devuelve readFile */
   }
-
-  async getbyid(id: escalador['id']): Promise<escalador> {
+  async getById(id: escalador['id']): Promise<escalador> {
     const data: escalador[] = await this.getAll();
     const item = data.find((item) => item.id === id);
     if (!item)

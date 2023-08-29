@@ -1,11 +1,11 @@
 /* eslint-disable lines-between-class-members */
 import { NextFunction, Request, Response } from 'express';
 import { escalador } from '../model/escalador.js';
+import { Repository } from '../repository/repository.js';
 import { ControllerStructure } from './controller.interface';
-import { repository } from './controller.interface.js';
 
-export class escaladorController implements ControllerStructure {
-  constructor(private repo: repository<escalador>) {
+export class EscaladorController implements ControllerStructure {
+  constructor(private repo: Repository<escalador>) {
     this.repo = repo;
   }
   async getAll(req: Request, res: Response, next: NextFunction) {
@@ -17,7 +17,7 @@ export class escaladorController implements ControllerStructure {
     }
   }
 
-  async post(req: Request, res: Response, next: NextFunction) {
+  async create(req: Request, res: Response, next: NextFunction) {
     try {
       const finalEscalador = await this.repo.post(req.body);
       res.status(201);
@@ -36,7 +36,7 @@ export class escaladorController implements ControllerStructure {
       next(error);
     }
   }
-  async patch(req: Request, res: Response, next: NextFunction) {
+  async update(req: Request, res: Response, next: NextFunction) {
     try {
       const { id } = req.params;
       const finalEscalador = await this.repo.patch(id, req.body);
